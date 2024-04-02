@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "money-exchange",
-    "slug": "money-exchange",
+    "name": "desapeguitos-app",
+    "slug": "desapeguitos-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "desapeguitos-app",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
