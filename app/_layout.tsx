@@ -3,7 +3,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
-import { useColorScheme } from 'react-native'
+import { Text, useColorScheme } from 'react-native'
 import { Provider as PaperProvider } from 'react-native-paper'
 
 export {
@@ -30,7 +30,7 @@ export default function RootLayout() {
   return (
     <>
       {/* Keep the splash screen open until the assets have loaded. In the future, we should just support async font loading with a native version of font-display. */}
-      {!loaded && <SplashScreen />}
+      {!loaded && <Text>Loading...</Text>}
       {loaded && <RootLayoutNav />}
     </>
   )
@@ -40,7 +40,7 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme()
 
   return (
-    <>
+    
       <PaperProvider>
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
           <Stack>
@@ -49,6 +49,6 @@ function RootLayoutNav() {
           </Stack>
         </ThemeProvider>
       </PaperProvider>
-    </>
+ 
   )
 }
