@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed'
 export default function ModalScreen() {
   return (
     <View>
-      <Text>Modal</Text>
+      <Text>Em breve opções para filtrar sua busca</Text>
       <View lightColor='#eee' darkColor='rgba(255,255,255,0.1)' />
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}

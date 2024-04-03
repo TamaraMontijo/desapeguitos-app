@@ -6,6 +6,13 @@ import { useEffect } from 'react'
 import { Text, useColorScheme } from 'react-native'
 import { Provider as PaperProvider } from 'react-native-paper'
 
+import {
+  Nunito_300Light,
+  Nunito_400Regular,
+  Nunito_700Bold,
+} from "@expo-google-fonts/nunito";
+import { Header } from '../components/header'
+
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
@@ -18,6 +25,9 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
+    Nunito_300Light,
+    Nunito_400Regular,
+    Nunito_700Bold,
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
   })
@@ -42,13 +52,13 @@ function RootLayoutNav() {
   return (
     
       <PaperProvider>
-        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <ThemeProvider value={DefaultTheme}>
+          <Header></Header>
           <Stack>
             <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
             <Stack.Screen name='modal' options={{ presentation: 'modal' }} />
           </Stack>
         </ThemeProvider>
       </PaperProvider>
- 
   )
 }
